@@ -5,9 +5,9 @@ import dotenv from 'dotenv';
 import path from 'path';
 import { fileURLToPath } from 'url';
 import { dirname } from 'path';
-import { connectDB } from './config/db';
-import authRoutes from './routes/auth';
-import widgetRoutes from './routes/widget';
+import { connectDB } from './config/db.js';
+import authRoutes from './routes/auth.js';
+import widgetRoutes from './routes/widget.js';
 
 dotenv.config();
 
