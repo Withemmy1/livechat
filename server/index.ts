@@ -5,9 +5,9 @@ import dotenv from 'dotenv';
 import path from 'path';
 import { fileURLToPath } from 'url';
 import { dirname } from 'path';
-import { connectDB } from './config/db.js';
-import authRoutes from './routes/auth.js';
-import widgetRoutes from './routes/widget.js';
+import { connectDB } from './config/db';
+import authRoutes from './routes/auth';
+import widgetRoutes from './routes/widget';
 
 dotenv.config();
 
@@ -33,7 +33,7 @@ app.use('/api/widget', widgetRoutes);
 
 // Serve static files in production
 if (process.env.NODE_ENV === 'production') {
-  const distPath = path.join(__dirname, '../../dist');
+  const distPath = path.join(__dirname, '../dist');
   app.use(express.static(distPath));
   
   app.get('*', (req, res) => {
